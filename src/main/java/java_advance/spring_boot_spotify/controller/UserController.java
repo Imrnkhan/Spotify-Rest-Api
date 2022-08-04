@@ -75,6 +75,8 @@ public class UserController {
         ResponseEntity<User> response;
         User updatedUser = userServiceInterface.updateUserById(providedUpdatedUser);
         if (updatedUser == null) {
+
+            
             throw new ResourceNotFoundException("User not found!");
         } else {
             response = new ResponseEntity<>(updatedUser, HttpStatus.OK);
